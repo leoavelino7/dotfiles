@@ -52,3 +52,20 @@ function defineGitAlias(){
 
 checkcommand "git" installGit
 execIfExist "git" "defineGitAlias"
+
+#### Install espanso
+function installEspanso(){
+  # https://espanso.org/docs/install/linux/#deb-x11
+  wget https://github.com/federico-terzi/espanso/releases/download/v2.2.1/espanso-debian-x11-amd64.deb
+  sudo apt install ./espanso-debian-x11-amd64.deb
+  espanso service register
+  espanso start
+
+  rm ./espanso-debian-x11-amd64.deb
+}
+
+checkcommand "espanso" installEspanso
+
+# Others links
+ln -sf $DIR/config/espanso/config/default.yml "$(espanso path config)/config/default.yml"
+ln -sf $DIR/config/espanso/match/base.yml "$(espanso path config)/match/base.yml"

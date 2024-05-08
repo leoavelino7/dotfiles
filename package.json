@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "name": "dotfiles",
+  "main": "index.js",
+  "author": "Leonardo Avelino",
+  "license": "MIT",
+  "scripts": {
+    "espanso:compile": "tsx ./src/index.ts espanso"
+  },
+  "dependencies": {
+    "@types/node": "20.12.7",
+    "crypto": "1.0.1",
+    "nodemon": "3.1.0",
+    "prettier": "3.2.5",
+    "tsx": "4.7.3",
+    "yaml": "2.4.2"
+  }
+}

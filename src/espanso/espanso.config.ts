@@ -2,6 +2,7 @@ import { home } from "../utils";
 import { _, imports, node, stringify, triggers } from "./espanso.utils";
 
 const simpleTriggers = [
+    triggers.n("today", "date", "%Y-%m-%d (%A) %H:%M %P"),
     triggers.n("isodate", "date", "%Y-%m-%dT%H:%M:%S"),
     triggers.n("date", "date", "%d/%m/%Y"),
     triggers.n("time", "date", "%H:%M"),

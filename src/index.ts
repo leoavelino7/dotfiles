@@ -1,10 +1,13 @@
+import { homebrew } from "./homebrew/homebrew";
 import { espanso } from "./espanso/espanso";
+import { Logger } from "./logger";
 
 type ExecFn = () => void;
 
 const map = {
+    homebrew,
     espanso,
-    default: () => console.log("Nothing to do"),
+    default: () => Logger.warn("Nothing to do"),
 } satisfies Record<string, ExecFn>;
 
 type Functions = keyof typeof map;

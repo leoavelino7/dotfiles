@@ -143,3 +143,4 @@ autoload -U add-zsh-hook
 # add-zsh-hook chpwd _postcd
 
 # _postcd
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

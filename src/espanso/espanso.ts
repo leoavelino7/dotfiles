@@ -3,6 +3,7 @@ import path from "node:path";
 import yaml from "yaml";
 import { $shell, checkCommand, trim } from "../utils";
 import { createEspansoConfig } from "./espanso.config";
+import { Logger } from "../logger";
 
 const espansoConfigDefaults = {
     toggle_key: "OFF",
@@ -11,8 +12,8 @@ const espansoConfigDefaults = {
 };
 
 const install = async () => {
-    console.log("Espanso - Installing");
-    // https://espanso.org/docs/install/linux/#deb-x11
+    Logger.info("Espanso - Installing");
+    // DOC - https://espanso.org/docs/install/linux/#deb-x11
     await $shell(
         "wget https://github.com/federico-terzi/espanso/releases/download/v2.2.1/espanso-debian-x11-amd64.deb",
     );
@@ -21,7 +22,7 @@ const install = async () => {
 
     await $shell("rm ./espanso-debian-x11-amd64.deb");
 
-    console.log("Espanso - Installed");
+    Logger.info("Espanso - Installed");
 };
 
 const configEspanso = async () => {
@@ -43,9 +44,9 @@ const configEspanso = async () => {
         yaml.stringify(espansoConfigDefaults),
         "utf-8",
     );
-    console.log("Espanso was configured");
+    Logger.info("Espanso was configured");
     const created = [matches, config, baseYml, defaultYml];
-    created.forEach((x) => console.log(`\t - Created: "${x}"`));
+    created.forEach((x) => Logger.info(`\t - Created: "${x}"`));
 };
 
 const start = async () => {

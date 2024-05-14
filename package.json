@@ -5,10 +5,12 @@
   "author": "Leonardo Avelino",
   "license": "MIT",
   "scripts": {
-    "espanso:compile": "tsx ./src/index.ts espanso"
+    "espanso:compile": "tsx ./src/index.ts espanso",
+    "homebrew:compile": "tsx ./src/index.ts homebrew"
   },
   "dependencies": {
     "@types/node": "20.12.7",
+    "chalk": "5.3.0",
     "crypto": "1.0.1",
     "nodemon": "3.1.0",
     "prettier": "3.2.5",

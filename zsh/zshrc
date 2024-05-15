@@ -143,4 +143,8 @@ autoload -U add-zsh-hook
 # add-zsh-hook chpwd _postcd
 
 # _postcd
+# Config Homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Config zoxide
+eval "$(zoxide init zsh)"

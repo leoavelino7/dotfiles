@@ -78,6 +78,8 @@ plugins=(
   zsh-syntax-highlighting
   yarn
   npm
+  # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/themes
+  themes
 )
 
 source $ZSH/oh-my-zsh.sh

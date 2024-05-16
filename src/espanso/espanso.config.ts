@@ -2,6 +2,7 @@ import { home } from "../utils";
 import { _, imports, node, stringify, triggers } from "./espanso.utils";
 
 const simpleTriggers = [
+    triggers.i("weather", "curl wttr.in"),
     triggers.n("today", "date", "%Y-%m-%d (%A) %H:%M %P"),
     triggers.n("isodate", "date", "%Y-%m-%dT%H:%M:%S"),
     triggers.n("date", "date", "%d/%m/%Y"),
@@ -17,6 +18,7 @@ const simpleTriggers = [
 ];
 
 const shellTriggers = [
+    triggers.$("localip", "ip a | grep 'inet 192' | awk '{ print $2 }'"),
     triggers.$("cnpj", `${node} ${_}/bin/cnpj`),
     triggers.$("cpf", `${node} ${_}/bin/cpf`),
     triggers.$("master", `${node} ${_}/bin/credit-card master card`),

@@ -6,7 +6,7 @@ const install = async () => {
     process.exit(-1);
 };
 
-const apps = ["zoxide", "fzf"].join(" ");
+const apps = ["zoxide", "bat", "fzf"].join(" ");
 
 export const homebrew = async () => {
     const exist = await checkCommand("brew -v");

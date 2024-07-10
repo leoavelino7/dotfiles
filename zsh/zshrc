@@ -126,6 +126,9 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# nvim
+alias inv='nvim $(fzf -m --preview="bat --color=always {}")'
+
 # Função para carregar o dotenv
 function dotenv() {
   if [[ -f "$1" ]];then
@@ -150,3 +153,6 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Config zoxide
 eval "$(zoxide init zsh)"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
